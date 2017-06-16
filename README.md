@@ -11,7 +11,7 @@ This is going to be a seven segment arduino liberary... Work still not finished!
     <li>B-6 connected to pin 9 (B1).</li>
     <li>A-7 connected to pin 7 (B2).</li>
     <li>F-9 connected to pin 11 (B3).</li>
-    <li>G-10 connected to pin 12 (B4).</li>
+    <li>G-10 connected to pin 12 (B4).</li></ul>**Non-common power lines**<ul>
     <li>Common pin of left most(first) 7 segment is connected to pin 2 (D2).</li>
     <li>Common pin of second 7 segment is connected to pin 4 (D4).</li>
     <li>Common pin of third(second last) 7 segment is connected to pin 13 (B5).</li>
