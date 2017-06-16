@@ -118,6 +118,66 @@ void seg1_nine()
   PORTD =(0<<2)|(0<<5)|(1<<6)|(1<<7);
   PORTB =(0<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4);
 }
+void seg1_dot_zero()
+{
+  seg1_reset();
+  PORTD =(0<<2)|(1<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(1<<2)|(1<<3)|(0<<4);
+}
+void seg1_dot_one()
+{
+  seg1_reset();
+  PORTD =(0<<2)|(0<<5)|(0<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(0<<2)|(0<<3)|(0<<4);
+}
+void seg1_dot_two()
+{
+  seg1_reset();
+  PORTD =(0<<2)|(1<<5)|(1<<6)|(0<<7);
+  PORTB =(1<<0)|(1<<1)|(1<<2)|(0<<3)|(1<<4);
+}
+void seg1_dot_three()
+{
+  seg1_reset();
+  PORTD =(0<<2)|(0<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(1<<2)|(0<<3)|(1<<4);
+}
+void seg1_dot_four()
+{
+  seg1_reset();
+  PORTD =(0<<2)|(0<<5)|(0<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(0<<2)|(1<<3)|(1<<4);
+}
+void seg1_dot_five()
+{
+  seg1_reset();
+  PORTD =(0<<2)|(0<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(0<<1)|(1<<2)|(1<<3)|(1<<4);
+}
+void seg1_dot_six()
+{
+  seg1_reset();
+  PORTD =(0<<2)|(1<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(0<<1)|(1<<2)|(1<<3)|(1<<4);
+}
+void seg1_dot_seven()
+{
+  seg1_reset();
+  PORTD =(1<<2)|(0<<5)|(0<<6)|(1<<7);
+  PORTB =(0<<0)|(1<<1)|(1<<2)|(0<<3)|(0<<4);
+}
+void seg1_dot_eight()
+{
+  seg1_reset();
+  PORTD =(0<<2)|(1<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4);
+}
+void seg1_dot_nine()
+{
+  seg1_reset();
+  PORTD =(0<<2)|(0<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4);
+}
 void seg1_num_test()
 {
   #define del 100
@@ -152,6 +212,51 @@ void seg1_num_test()
   seg1_nine();
   delay(del);
 }
+void seg1_dot_num_test()
+{
+  #define del 100
+  //zero
+  seg1_dot_zero();
+  delay(del);
+  //one
+  seg1_dot_one();
+  delay(del);
+  //two
+  seg1_dot_two();
+  delay(del);
+  //three
+  seg1_dot_three();
+  delay(del);
+  //four
+  seg1_dot_four();
+  delay(del);
+  //five
+  seg1_dot_five();
+  delay(del);
+  //six
+  seg1_dot_six();
+  delay(del);
+  //seven
+  seg1_dot_seven();
+  delay(del);
+  //eight
+  seg1_dot_eight();
+  delay(del);
+  //nine
+  seg1_dot_nine();
+  delay(del);
+}
+
+
+
+
+
+
+
+
+
+
+
 void seg2_on()
 {
   PORTD = (1<<4)|(1<<5)|(1<<6)|(1<<7);
@@ -297,6 +402,102 @@ void seg2_num_test()
   delay(del);
   #undef del
 }
+//DOT
+void seg2_dot_zero()
+{
+  seg2_reset();
+  PORTD =~((0<<2)|(1<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(1<<3)|(0<<4));
+}
+void seg2_dot_one()
+{
+  seg2_reset();
+  PORTD =~((0<<2)|(0<<5)|(0<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(0<<2)|(0<<3)|(0<<4));
+}
+void seg2_dot_two()
+{
+  seg2_reset();
+  PORTD =~((0<<2)|(1<<5)|(1<<6)|(0<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(0<<3)|(1<<4));
+}
+void seg2_dot_three()
+{
+  seg2_reset();
+  PORTD =~((0<<2)|(0<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(0<<3)|(1<<4));
+}
+void seg2_dot_four()
+{
+  seg2_reset();
+  PORTD =~((0<<2)|(0<<5)|(0<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(0<<2)|(1<<3)|(1<<4));
+}
+void seg2_dot_five()
+{
+  seg2_reset();
+  PORTD =~((0<<2)|(0<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(0<<1)|(1<<2)|(1<<3)|(1<<4));
+}
+void seg2_dot_six()
+{
+  seg2_reset();
+  PORTD =~((0<<2)|(1<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(0<<1)|(1<<2)|(1<<3)|(1<<4));
+}
+void seg2_dot_seven()
+{
+  seg2_reset();
+  PORTD =~((0<<2)|(0<<5)|(0<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(0<<3)|(0<<4));
+}
+void seg2_dot_eight()
+{
+  seg2_reset();
+  PORTD =~((0<<2)|(1<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4));
+}
+void seg2_dot_nine()
+{
+  seg2_reset();
+  PORTD =~((0<<2)|(0<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4));
+}
+void seg2_dot_num_test()
+{
+  #define del 100
+  //zero
+  seg2_dot_zero();
+  delay(del);
+  //one
+  seg2_dot_one();
+  delay(del);
+  //two
+  seg2_dot_two();
+  delay(del);
+  //three
+  seg2_dot_three();
+  delay(del);
+  //four
+  seg2_dot_four();
+  delay(del);
+  //five
+  seg2_dot_five();
+  delay(del);
+  //six
+  seg2_dot_six();
+  delay(del);
+  //seven
+  seg2_dot_seven();
+  delay(del);
+  //eight
+  seg2_dot_eight();
+  delay(del);
+  //nine
+  seg2_dot_nine();
+  delay(del);
+  #undef del
+}
 void two_seg(int a)
 {
   #define del 8
@@ -374,6 +575,17 @@ void two_seg_test()
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
 void seg3_on()
 {
   DDRD =(1<<5)|(1<<6)|(1<<7);
@@ -516,6 +728,101 @@ void seg3_num_test()
   seg3_nine();
   delay(del);
 }
+//DOT
+void seg3_dot_zero()
+{
+  seg3_reset();
+  PORTD =(0<<2)|(1<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(1<<2)|(1<<3)|(0<<4);
+}
+void seg3_dot_one()
+{
+  seg3_reset();
+  PORTD =(0<<2)|(0<<5)|(0<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(0<<2)|(0<<3)|(0<<4);
+}
+void seg3_dot_two()
+{
+  seg3_reset();
+  PORTD =(0<<2)|(1<<5)|(1<<6)|(0<<7);
+  PORTB =(1<<0)|(1<<1)|(1<<2)|(0<<3)|(1<<4);
+}
+void seg3_dot_three()
+{
+  seg3_reset();
+  PORTD =(0<<2)|(0<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(1<<2)|(0<<3)|(1<<4);
+}
+void seg3_dot_four()
+{
+  seg3_reset();
+  PORTD =(0<<2)|(0<<5)|(0<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(0<<2)|(1<<3)|(1<<4);
+}
+void seg3_dot_five()
+{
+  seg3_reset();
+  PORTD =(0<<2)|(0<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(0<<1)|(1<<2)|(1<<3)|(1<<4);
+}
+void seg3_dot_six()
+{
+  seg3_reset();
+  PORTD =(0<<2)|(1<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(0<<1)|(1<<2)|(1<<3)|(1<<4);
+}
+void seg3_dot_seven()
+{
+  seg3_reset();
+  PORTD =(0<<2)|(0<<5)|(0<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(1<<2)|(0<<3)|(0<<4);
+}
+void seg3_dot_eight()
+{
+  seg3_reset();
+  PORTD =(0<<2)|(1<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4);
+}
+void seg3_dot_nine()
+{
+  seg3_reset();
+  PORTD =(0<<2)|(0<<5)|(1<<6)|(1<<7);
+  PORTB =(1<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4);
+}
+void seg3_dot_num_test()
+{
+  #define del 100
+  //zero
+  seg3_dot_zero();
+  delay(del);
+  //one
+  seg3_dot_one();
+  delay(del);
+  //two
+  seg3_dot_two();
+  delay(del);
+  //three
+  seg3_dot_three();
+  delay(del);
+  //four
+  seg3_dot_four();
+  delay(del);
+  //five
+  seg3_dot_five();
+  delay(del);
+  //six
+  seg3_dot_six();
+  delay(del);
+  //seven
+  seg3_dot_seven();
+  delay(del);
+  //eight
+  seg3_dot_eight();
+  delay(del);
+  //nine
+  seg3_dot_nine();
+  delay(del);
+}
 void three_seg(int a)
 {
   #define del 2
@@ -608,6 +915,16 @@ void three_seg_test()
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
 void seg4_on()
 {
   PORTD = (1<<3)|(1<<5)|(1<<6)|(1<<7);
@@ -658,6 +975,102 @@ void seg4_reset()
   PORTD =~((0<<3)|(0<<5)|(0<<6)|(0<<7));
   PORTB =~((0<<0)|(0<<1)|(0<<2)|(0<<3)|(0<<4));
 }
+//DOT
+void seg4_dot_zero()
+{
+  seg4_reset();
+  PORTD =~((0<<3)|(1<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(1<<3)|(0<<4));
+}
+void seg4_dot_one()
+{
+  seg4_reset();
+  PORTD =~((0<<3)|(0<<5)|(0<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(0<<2)|(0<<3)|(0<<4));
+}
+void seg4_dot_two()
+{
+  seg4_reset();
+  PORTD =~((0<<3)|(1<<5)|(1<<6)|(0<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(0<<3)|(1<<4));
+}
+void seg4_dot_three()
+{
+  seg4_reset();
+  PORTD =~((0<<3)|(0<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(0<<3)|(1<<4));
+}
+void seg4_dot_four()
+{
+  seg4_reset();
+  PORTD =~((0<<3)|(0<<5)|(0<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(0<<2)|(1<<3)|(1<<4));
+}
+void seg4_dot_five()
+{
+  seg4_reset();
+  PORTD =~((0<<3)|(0<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(0<<1)|(1<<2)|(1<<3)|(1<<4));
+}
+void seg4_dot_six()
+{
+  seg2_reset();
+  PORTD =~((0<<3)|(1<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(0<<1)|(1<<2)|(1<<3)|(1<<4));
+}
+void seg4_dot_seven()
+{
+  seg4_reset();
+  PORTD =~((0<<3)|(0<<5)|(0<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(0<<3)|(0<<4));
+}
+void seg4_dot_eight()
+{
+  seg4_reset();
+  PORTD =~((0<<3)|(1<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4));
+}
+void seg4_dot_nine()
+{
+  seg4_reset();
+  PORTD =~((0<<3)|(0<<5)|(1<<6)|(1<<7));
+  PORTB =~((1<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4));
+}
+void seg4_dot_num_test()
+{
+  #define del 100
+  //zero
+  seg4_dot_zero();
+  delay(del);
+  //one
+  seg4_dot_one();
+  delay(del);
+  //two
+  seg4_dot_two();
+  delay(del);
+  //three
+  seg4_dot_three();
+  delay(del);
+  //four
+  seg4_dot_four();
+  delay(del);
+  //five
+  seg4_dot_five();
+  delay(del);
+  //six
+  seg4_dot_six();
+  delay(del);
+  //seven
+  seg4_dot_seven();
+  delay(del);
+  //eight
+  seg4_dot_eight();
+  delay(del);
+  //nine
+  seg4_dot_nine();
+  delay(del);
+}
+//normal
 void seg4_zero()
 {
   seg4_reset();
@@ -722,34 +1135,34 @@ void seg4_num_test()
 {
   #define del 100
   //zero
-  seg3_zero();
+  seg4_zero();
   delay(del);
   //one
-  seg3_one();
+  seg4_one();
   delay(del);
   //two
-  seg3_two();
+  seg4_two();
   delay(del);
   //three
-  seg3_three();
+  seg4_three();
   delay(del);
   //four
-  seg3_four();
+  seg4_four();
   delay(del);
   //five
-  seg3_five();
+  seg4_five();
   delay(del);
   //six
-  seg3_six();
+  seg4_six();
   delay(del);
   //seven
-  seg3_seven();
+  seg4_seven();
   delay(del);
   //eight
-  seg3_eight();
+  seg4_eight();
   delay(del);
   //nine
-  seg3_nine();
+  seg4_nine();
   delay(del);
 }
 void four_seg(int a)
@@ -859,29 +1272,65 @@ void four_seg_test()
     }
   }
 }
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-}
-int i=0;
-int flag=0;
-void loop() {
-// four_seg_test();
-//seg4_on();
-//seg4_selftest();
-int vcc=readVcc();
-float z=analogRead(A1)*(vcc/1024);
-unsigned long int timei =millis();
-unsigned long int timeo =500;
-while(1)
+
+
+
+
+
+
+
+
+
+void four_seg_print_Vcc()
+{
+  #define sps 0.1 //Samples per second
+  int vcc=readVcc();
+  unsigned long int timei =millis();
+  unsigned long int timeo =500;
+  while(1)
     {
-    four_seg(z);
+    four_seg(vcc);
     unsigned long int time2 =millis()-timei;
     if(time2>timeo)
     {
-      timeo+=500;
+      timeo+=(1000*sps);
       break;
-    };
-    delay(del);
+    }
     }
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(A0,1);
+}
+#define del 1
+int i=0;
+int flag=0;
+void loop() {
+  seg1_on();
+  seg1_dot_num_test();
+  seg2_on();
+  seg2_dot_num_test();
+  seg3_on();
+  seg3_dot_num_test();
+  seg4_on();
+  seg4_dot_num_test();
+  //four_seg(1245);
+  while(1)
+  {
+    four_seg_print_Vcc();
+  }
+}
