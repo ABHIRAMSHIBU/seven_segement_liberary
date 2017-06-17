@@ -163,7 +163,7 @@ void seg1_dot_six()
 void seg1_dot_seven()
 {
   seg1_reset();
-  PORTD =(1<<2)|(0<<5)|(0<<6)|(1<<7);
+  PORTD =(0<<2)|(0<<5)|(0<<6)|(1<<7);
   PORTB =(0<<0)|(1<<1)|(1<<2)|(0<<3)|(0<<4);
 }
 void seg1_dot_eight()
@@ -1300,10 +1300,166 @@ void four_seg_print_Vcc()
 } 
 
 
+int float_deci(float a)
+{
+  int k;
+  int digit,count=0;
+  k=int(a);
+  do
+  {
+    digit=k%10;
+    count++;
+    k=k/10;
+  }while(k>0);
 
+  return count;
+}
 
+int float_pint(float a,int d)
+{
+  switch(d)
+  {
+     case 1: return(int(a*1000));break;
+     case 2: return(int(a*100));break;
+     case 3: return(int(a*10));break;
+     default:return(a);
+  }
+}
 
-
+void four_dot_seg(float p)
+{
+  #define del 300
+   int d=float_deci(p);
+   int a=float_pint(p,d);
+   if(a<10000&&a>-1)
+  {
+    int z=a%10;
+    a=a/10;
+    switch(z)
+    {
+      case 0:seg4_on();seg4_zero();delayMicroseconds(del);seg4_off();break;
+      case 1:seg4_on();seg4_one();delayMicroseconds(del);seg4_off();break;
+      case 2:seg4_on();seg4_two();delayMicroseconds(del);seg4_off();break;
+      case 3:seg4_on();seg4_three();delayMicroseconds(del);seg4_off();break;
+      case 4:seg4_on();seg4_four();delayMicroseconds(del);seg4_off();break;
+      case 5:seg4_on();seg4_five();delayMicroseconds(del);seg4_off();break;
+      case 6:seg4_on();seg4_six();delayMicroseconds(del);seg4_off();break;
+      case 7:seg4_on();seg4_seven();delayMicroseconds(del);seg4_off();break;
+      case 8:seg4_on();seg4_eight();delayMicroseconds(del);seg4_off();break;
+      case 9:seg4_on();seg4_nine();delayMicroseconds(del);seg4_off();break;
+    }
+    z=a%10;
+    a=a/10;
+    
+    if(d==3)
+    {
+      switch(z)
+    {
+      case 0:seg3_on();seg3_dot_zero();delayMicroseconds(del);seg3_off();break;
+      case 1:seg3_on();seg3_dot_one();delayMicroseconds(del);seg3_off();break;
+      case 2:seg3_on();seg3_dot_two();delayMicroseconds(del);seg3_off();break;
+      case 3:seg3_on();seg3_dot_three();delayMicroseconds(del);seg3_off();break;
+      case 4:seg3_on();seg3_dot_four();delayMicroseconds(del);seg3_off();break;
+      case 5:seg3_on();seg3_dot_five();delayMicroseconds(del);seg3_off();break;
+      case 6:seg3_on();seg3_dot_six();delayMicroseconds(del);seg3_off();break;
+      case 7:seg3_on();seg3_dot_seven();delayMicroseconds(del);seg3_off();break;
+      case 8:seg3_on();seg3_dot_eight();delayMicroseconds(del);seg3_off();break;
+      case 9:seg3_on();seg3_dot_nine();delayMicroseconds(del);seg3_off();break;
+    }
+    
+    }
+    
+    else
+    {
+    switch(z)
+    {
+      case 0:seg3_on();seg3_zero();delayMicroseconds(del);seg3_off();break;
+      case 1:seg3_on();seg3_one();delayMicroseconds(del);seg3_off();break;
+      case 2:seg3_on();seg3_two();delayMicroseconds(del);seg3_off();break;
+      case 3:seg3_on();seg3_three();delayMicroseconds(del);seg3_off();break;
+      case 4:seg3_on();seg3_four();delayMicroseconds(del);seg3_off();break;
+      case 5:seg3_on();seg3_five();delayMicroseconds(del);seg3_off();break;
+      case 6:seg3_on();seg3_six();delayMicroseconds(del);seg3_off();break;
+      case 7:seg3_on();seg3_seven();delayMicroseconds(del);seg3_off();break;
+      case 8:seg3_on();seg3_eight();delayMicroseconds(del);seg3_off();break;
+      case 9:seg3_on();seg3_nine();delayMicroseconds(del);seg3_off();break;
+    }
+    
+    }
+    z=a%10;
+    a=a/10;
+    if(d==2)
+    {
+      switch(z)
+    {
+      case 0:seg2_on();seg2_dot_zero();delayMicroseconds(del);seg2_off();break;
+      case 1:seg2_on();seg2_dot_one();delayMicroseconds(del);seg2_off();break;
+      case 2:seg2_on();seg2_dot_two();delayMicroseconds(del);seg2_off();break;
+      case 3:seg2_on();seg2_dot_three();delayMicroseconds(del);seg2_off();break;
+      case 4:seg2_on();seg2_dot_four();delayMicroseconds(del);seg2_off();break;
+      case 5:seg2_on();seg2_dot_five();delayMicroseconds(del);seg2_off();break;
+      case 6:seg2_on();seg2_dot_six();delayMicroseconds(del);seg2_off();break;
+      case 7:seg2_on();seg2_dot_seven();delayMicroseconds(del);seg2_off();break;
+      case 8:seg2_on();seg2_dot_eight();delayMicroseconds(del);seg2_off();break;
+      case 9:seg2_on();seg2_dot_nine();delayMicroseconds(del);seg2_off();break;
+    }
+    
+    }
+    
+    else
+    {
+    switch(z)
+    {
+      case 0:seg2_on();seg2_zero();delayMicroseconds(del);seg2_off();break;
+      case 1:seg2_on();seg2_one();delayMicroseconds(del);seg2_off();break;
+      case 2:seg2_on();seg2_two();delayMicroseconds(del);seg2_off();break;
+      case 3:seg2_on();seg2_three();delayMicroseconds(del);seg2_off();break;
+      case 4:seg2_on();seg2_four();delayMicroseconds(del);seg2_off();break;
+      case 5:seg2_on();seg2_five();delayMicroseconds(del);seg2_off();break;
+      case 6:seg2_on();seg2_six();delayMicroseconds(del);seg2_off();break;
+      case 7:seg2_on();seg2_seven();delayMicroseconds(del);seg2_off();break;
+      case 8:seg2_on();seg2_eight();delayMicroseconds(del);seg2_off();break;
+      case 9:seg2_on();seg2_nine();delayMicroseconds(del);seg2_off();break;
+    }
+    
+    }
+    
+    if(d==1)
+    {
+    switch(a)
+    {
+      case 0:seg1_on();seg1_dot_zero();delayMicroseconds(del);seg1_off();break;
+      case 1:seg1_on();seg1_dot_one();delayMicroseconds(del);seg1_off();break;
+      case 2:seg1_on();seg1_dot_two();delayMicroseconds(del);seg1_off();break;
+      case 3:seg1_on();seg1_dot_three();delayMicroseconds(del);seg1_off();break;
+      case 4:seg1_on();seg1_dot_four();delayMicroseconds(del);seg1_off();break;
+      case 5:seg1_on();seg1_dot_five();delayMicroseconds(del);seg1_off();break;
+      case 6:seg1_on();seg1_dot_six();delayMicroseconds(del);seg1_off();break;
+      case 7:seg1_on();seg1_dot_seven();delayMicroseconds(del);seg1_off();break;
+      case 8:seg1_on();seg1_dot_eight();delayMicroseconds(del);seg1_off();break;
+      case 9:seg1_on();seg1_dot_nine();delayMicroseconds(del);seg1_off();break;
+    }
+    
+    }
+    else
+    {
+      switch(a)
+    {
+      case 0:seg1_on();seg1_zero();delayMicroseconds(del);seg1_off();break;
+      case 1:seg1_on();seg1_one();delayMicroseconds(del);seg1_off();break;
+      case 2:seg1_on();seg1_two();delayMicroseconds(del);seg1_off();break;
+      case 3:seg1_on();seg1_three();delayMicroseconds(del);seg1_off();break;
+      case 4:seg1_on();seg1_four();delayMicroseconds(del);seg1_off();break;
+      case 5:seg1_on();seg1_five();delayMicroseconds(del);seg1_off();break;
+      case 6:seg1_on();seg1_six();delayMicroseconds(del);seg1_off();break;
+      case 7:seg1_on();seg1_seven();delayMicroseconds(del);seg1_off();break;
+      case 8:seg1_on();seg1_eight();delayMicroseconds(del);seg1_off();break;
+      case 9:seg1_on();seg1_nine();delayMicroseconds(del);seg1_off();break;
+    }
+    }
+    #undef del
+  }
+}
 
 
 
@@ -1317,20 +1473,24 @@ void setup() {
   pinMode(A0,1);
 }
 #define del 1
-int i=0;
+float i=0;
 int flag=0;
 void loop() {
-  seg1_on();
-  seg1_dot_num_test();
-  seg2_on();
-  seg2_dot_num_test();
-  seg3_on();
-  seg3_dot_num_test();
-  seg4_on();
-  seg4_dot_num_test();
-  //four_seg(1245);
+ /* unsigned long timei=millis();
+  unsigned long timeo=1000;
   while(1)
   {
-    four_seg_print_Vcc();
-  }
+    if((millis()-timei)>timeo)
+    {
+      timeo+=1000;
+      break;
+    }
+  four_dot_seg(i);
+  i+=0.001;
+  }*/pinMode(A1,OUTPUT);
+  digitalWrite(A1,0);
+  pinMode(A0,INPUT);
+  
+  four_dot_seg(analogRead(A0));
+
 }
